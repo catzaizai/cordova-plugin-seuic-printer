@@ -1,8 +1,10 @@
 var exec = require('cordova/exec');
 module.exports = {
-    printText: function(text, cb) {
+    printText: function(text, success, failure) {
         exec(function(){
-            if(cb) cb();
-        }, function(msg){ console.log(msg); }, 'SeuicPrinter', 'printMethod', [text]);
+            if(success) success();
+        }, function(ex){
+            if(failure) failure(ex);
+        }, 'SeuicPrinter', 'printMethod', [text]);
     }
 };

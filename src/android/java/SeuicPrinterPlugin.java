@@ -32,7 +32,11 @@ public class SeuicPrinterPlugin extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         Activity activity = cordova.getActivity();
-        activity.bindService(new Intent("com.seuic.android.PosdService"), posdConnection, Context.BIND_AUTO_CREATE);
+        try{
+            this.activity.bindService(new Intent("com.seuic.android.PosdService"), posdConnection, this.activity.getApplicationContext().BIND_AUTO_CREATE);
+        } catch(Exception e){
+            Log.e(e.getClass().getSimpleName(),e.getMessage());
+        }
     }
 
     @Override
