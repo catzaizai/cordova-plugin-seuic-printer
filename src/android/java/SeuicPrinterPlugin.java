@@ -24,9 +24,12 @@ import java.io.UnsupportedEncodingException;
 
 public class SeuicPrinterPlugin extends CordovaPlugin {
 
-    public static final String ACTION = "printMethod";
-    public static PosdService posdService = null;
-    public static Printer printer = null;
+    private static final String PRINTACTION = "printMethod";
+    private static final String CHECKESERVICE = "checkServiceMethod";
+
+    private static PosdService posdService = null;
+    private static Printer printer = null;
+    private boolean hasService = false;
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -35,25 +38,27 @@ public class SeuicPrinterPlugin extends CordovaPlugin {
         try{
             this.activity.bindService(new Intent("com.seuic.android.PosdService"), posdConnection, this.activity.getApplicationContext().BIND_AUTO_CREATE);
         } catch(Exception e){
+            hasService = false;
             Log.e(e.getClass().getSimpleName(),e.getMessage());
         }
     }
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals(ACTION)) {
+        if (action.equals(PRINTACTION)) {
             try {
                 printText(args.getString(0));
                 callbackContext.success("Success!");
-                return true;
             } catch (Exception e) {
                 e.printStackTrace();
                 callbackContext.error("错误:" + e.getMessage() + args.getString(0));
                 return false;
             }
+        } else if(action.equals(CHECKESERVICE)){
+            callbackContext.success(hasService?"true":"false");
         }
 
-        return false;
+        return true;
     }
 
 
@@ -65,6 +70,7 @@ public class SeuicPrinterPlugin extends CordovaPlugin {
             if (null != posdService) {
                 try {
                     printer = Printer.Stub.asInterface(posdService.getPrinter());
+                    hasService = true;
                 } catch (RemoteException e) {
                     Log.e(e.getClass().getSimpleName(),e.getMessage());
                 }

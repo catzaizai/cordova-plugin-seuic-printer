@@ -6,5 +6,12 @@ module.exports = {
         }, function(ex){
             if(failure) failure(ex);
         }, 'SeuicPrinter', 'printMethod', [text]);
+    },
+    checkService: function() {
+        exec(function(result) {
+            return result == 'true';
+        }, function(){
+            return false;
+        }, 'SeuicPrinter', 'checkServiceMethod', []);
     }
 };
