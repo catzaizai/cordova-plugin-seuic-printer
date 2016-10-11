@@ -27,7 +27,6 @@ public class SeuicPrinterPlugin extends CordovaPlugin {
     private static final String PRINTACTION = "printMethod";
     private static final String CHECKESERVICE = "checkServiceMethod";
 
-    private Activity activity;
     private static PosdService posdService = null;
     private static Printer printer = null;
     private boolean hasService = false;
@@ -37,7 +36,7 @@ public class SeuicPrinterPlugin extends CordovaPlugin {
         super.initialize(cordova, webView);
         Activity activity = cordova.getActivity();
         try{
-            this.activity.bindService(new Intent("com.seuic.android.PosdService"), posdConnection, Context.BIND_AUTO_CREATE);
+            activity.bindService(new Intent("com.seuic.android.PosdService"), posdConnection, Context.BIND_AUTO_CREATE);
         } catch(Exception e){
             hasService = false;
             Log.e(e.getClass().getSimpleName(),e.getMessage());
