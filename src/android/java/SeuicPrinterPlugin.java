@@ -27,6 +27,7 @@ public class SeuicPrinterPlugin extends CordovaPlugin {
     private static final String PRINTACTION = "printMethod";
     private static final String CHECKESERVICE = "checkServiceMethod";
 
+    private Activity activity;
     private static PosdService posdService = null;
     private static Printer printer = null;
     private boolean hasService = false;

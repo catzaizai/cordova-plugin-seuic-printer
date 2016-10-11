@@ -7,11 +7,11 @@ module.exports = {
             if(failure) failure(ex);
         }, 'SeuicPrinter', 'printMethod', [text]);
     },
-    checkService: function() {
+    checkService: function(cb) {
         exec(function(result) {
-            return result == 'true';
+            if(cb){ cb(result == 'true') }
         }, function(){
-            return false;
+            if(cb){ cb(false) }
         }, 'SeuicPrinter', 'checkServiceMethod', []);
     }
 };
