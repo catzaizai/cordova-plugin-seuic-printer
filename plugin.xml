@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="seuic-cordova-plugin-printer" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>SeuicPrinter</name>
+    <description>Cordova Printer Plugin</description>
+    <js-module name="seuicPrinter" src="www/SeuicPrinter.js">
+        <clobbers target="cordova.plugins.seuicPrinter" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <!-- config-file中包含的这段会原封不动的插入到config.xml文件中 -->
+            <feature name="Printer">
+                <param name="android-package" value="com.seuic.cordova.plugin.SeuicPrinterPlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <!-- 本地代码，有多个文件就写多个source-file，src对应本项目，target对应安装后的目录，注意分隔符别写成包格式(x.xx.xxx) -->
+        <source-file src="src/android/java/BitmapUtils.java" target-dir="src/com/seuic/cordova/plugin" />
+        <source-file src="src/android/java/SeuicPrinterPlugin.java" target-dir="src/com/seuic/cordova/plugin" />
+
+        <source-file src="src/android/aidl/DownloadMKFromPCListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/FactoryFunc.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/Hash.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/ICCardGetEccListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/ICCardTransFinishListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/ICCardTransStartListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/MagCardReader.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/MagCardSwipeListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/MifareReader.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/MifareReadListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/MifareWriteListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/Pinpad.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/PinpadEnterPinListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/PosdService.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/PrintBarCodeListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/Printer.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/PrinterListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/PrintImageListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/PrintQRCodeListener.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/ServerCert.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/SuperPinpad.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/TermCert.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/TerminalInfo.java" target-dir="src/aidl/com/seuic/android"/>
+        <source-file src="src/android/aidl/ICCardReader.java" target-dir="src/aidl/com/seuic/android"/>
+    </platform>
+</plugin>
