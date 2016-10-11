@@ -19,29 +19,11 @@
         <source-file src="src/android/java/BitmapUtils.java" target-dir="src/com/seuic/cordova/plugin" />
         <source-file src="src/android/java/SeuicPrinterPlugin.java" target-dir="src/com/seuic/cordova/plugin" />
 
-        <source-file src="src/android/aidl/DownloadMKFromPCListener.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/FactoryFunc.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/Hash.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/ICCardGetEccListener.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/ICCardTransFinishListener.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/ICCardTransStartListener.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/MagCardReader.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/MagCardSwipeListener.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/MifareReader.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/MifareReadListener.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/MifareWriteListener.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/Pinpad.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/PinpadEnterPinListener.java" target-dir="src/aidl/com/seuic/android"/>
         <source-file src="src/android/aidl/PosdService.java" target-dir="src/aidl/com/seuic/android"/>
         <source-file src="src/android/aidl/PrintBarCodeListener.java" target-dir="src/aidl/com/seuic/android"/>
         <source-file src="src/android/aidl/Printer.java" target-dir="src/aidl/com/seuic/android"/>
         <source-file src="src/android/aidl/PrinterListener.java" target-dir="src/aidl/com/seuic/android"/>
         <source-file src="src/android/aidl/PrintImageListener.java" target-dir="src/aidl/com/seuic/android"/>
         <source-file src="src/android/aidl/PrintQRCodeListener.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/ServerCert.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/SuperPinpad.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/TermCert.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/TerminalInfo.java" target-dir="src/aidl/com/seuic/android"/>
-        <source-file src="src/android/aidl/ICCardReader.java" target-dir="src/aidl/com/seuic/android"/>
     </platform>
 </plugin>
