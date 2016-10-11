@@ -24,7 +24,7 @@ import java.io.UnsupportedEncodingException;
 
 public class SeuicPrinterPlugin extends CordovaPlugin {
 
-    public static final String ACTION = "print";
+    public static final String ACTION = "printMethod";
     public static PosdService posdService = null;
     public static Printer printer = null;
 
