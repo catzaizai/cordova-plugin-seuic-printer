@@ -1,6 +1,6 @@
-### ¼ò½é
+ï»¿### ç®€ä»‹
 
-### °²×°
+### å®‰è£…
 > cordova plugin add [https://github.com/catzaizai/cordova-plugin-seuic-print.git][1]
 
 
